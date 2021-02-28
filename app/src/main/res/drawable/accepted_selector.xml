@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/accept" android:state_enabled="true" />
+    <item android:drawable="@drawable/accept_disabled" />
+</selector>

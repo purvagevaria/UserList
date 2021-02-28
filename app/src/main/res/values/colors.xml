@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#EA5348</color>
+    <color name="colorAccent">#F44336</color>
+    <!--Other colors-->
+    <color name="col_user_name">#03DAC5</color>
+</resources>

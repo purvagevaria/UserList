@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="viewModel"
+            type="com.app.purvaassignment.ui.activity.dashboard.MainViewModel" />
+
+        <variable
+            name="beanData"
+            type="com.app.purvaassignment.dbclasses.enitity.UserEntity" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="2dp">
+
+                <ImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:imageUrl="@{beanData.image}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:src="@drawable/shadow"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{beanData.userName}"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    app:fontFamily="serif"
+                    app:layout_constraintBottom_toTopOf="@id/tvUserDetails"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="@string/app_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvUserDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:minLines="2"
+                    android:text="@{@string/location(beanData.age,beanData.location)}"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    app:fontFamily="sans-serif-condensed-light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="@string/app_name" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</layout>
