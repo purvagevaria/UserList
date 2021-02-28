@@ -5,9 +5,9 @@ object AppInfo {
 }
 
 object Android {
-    const val compileSdkVersion = 29
+    const val compileSdkVersion = 30
     const val minSdk = 24
-    const val targetSdk = 29
+    const val targetSdk = 30
 }
 
 object Binding {
